@@ -6,7 +6,6 @@ import AppointmentTable from './components/AppointmentTable';
 import FormModal from './components/FormModal';
 
 function App() {
-
   const [show, setShow] = useState(false);
   const handleClose = () => setShow(false);
   const [apptList, setApptList] = useState([] as any);
@@ -16,7 +15,6 @@ function App() {
       const res = await axios('/api/appointments');
       setApptList(res.data);
     }
-
     fetchAppointments();
   }, [])
 

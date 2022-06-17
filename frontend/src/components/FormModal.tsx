@@ -10,15 +10,15 @@ const FormModal = ({show, handleClose}: any) => {
 
     console.log(apptName)
 
-    const submitHandler = () => {
-        axios.post('/api/appointments', {
+    const submitHandler = async() => {
+        await axios.post('/api/appointments', {
             name: apptName,
             office: apptOffice,
             date: apptDate
         })
-            .then((res) => {
-                console.log(res);
-            })
+        .then((res) => {
+            console.log(res);
+        })
     }
 
     return (

@@ -21,3 +21,26 @@ exports.create = async(req:Request, res: Response) => {
 
     res.json(appointment);
 }
+
+exports.update = async(req: Request, res: Response) => {
+    const id = parseInt(req.params.id)
+    const {name, office, date} = req.body
+    const appointment = await prisma.appointment.update({
+        where: {id: id},
+        data: {
+            name: name,
+            office: office, 
+            date: date
+        }
+    })
+    res.json(appointment);
+}
+
+exports.delete = async (req: Request, res: Response) => {
+    const id = parseInt(req.params.id);
+
+    const appointment = await prisma.appointment.delete({
+        where: {id: id}
+    });
+    res.json(appointment);
+}
