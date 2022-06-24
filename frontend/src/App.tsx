@@ -1,13 +1,19 @@
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './App.css';
 import Header from './components/Header';
 import AppointmentTable from './components/AppointmentTable';
-import FormModal from './components/FormModal';
+import AppointmentModal from './components/AppointmentModal';
+import UpdateModal from './components/UpdateModal'
+import React from 'react';
 
 function App() {
+  //Use state boolean for toggling form modal
   const [show, setShow] = useState(false);
+  const [updateShow, setUpdateShow] = useState(false);
+
   const handleClose = () => setShow(false);
+  const handleUpdateClose = () => setUpdateShow(false);
   const [apptList, setApptList] = useState([] as any);
 
   useEffect(() => {
@@ -20,9 +26,10 @@ function App() {
 
   return (
     <div className="App">
-      <Header setShow={setShow}/>
-      <FormModal show={show}  handleClose={handleClose}/>
-      <AppointmentTable apptList={apptList}/>
+      <Header show={show} setShow={setShow} />
+      <AppointmentModal show={show} handleClose={handleClose} />
+      <UpdateModal updateShow={updateShow} handleUpdateClose={handleUpdateClose} />
+      <AppointmentTable setUpdateShow={setUpdateShow} updateShow={updateShow} apptList={apptList} />
     </div>
   );
 }

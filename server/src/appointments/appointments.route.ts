@@ -10,9 +10,10 @@ module.exports = (app: any) => {
 
     //Update appt
     router.put('/:id', appointment.update);
-    
+
     //Delete appt
     router.delete('/:id', appointment.delete)
+
 
     app.use('/api/appointments', router);
 }
