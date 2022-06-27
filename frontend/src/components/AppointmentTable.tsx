@@ -1,8 +1,12 @@
 import axios from 'axios';
 import { Table, Button } from 'react-bootstrap';
 import './css-files/AppointmentTable.css';
+import {useState} from 'react';
 
-const AppointmentTable = ({ apptList, setUpdateShow, updateShow }: any) => {
+const AppointmentTable = ({ apptList, setUpdateShow, updateShow, setUpdateId }: any) => {
+  
+  
+
 
   //Function for deleting appt
   const deleteHandler = (prop: string) => (event: any) => {
@@ -10,8 +14,9 @@ const AppointmentTable = ({ apptList, setUpdateShow, updateShow }: any) => {
     window.location.reload()
   }
 
-  const modalHandler = () => {
-    setUpdateShow(!updateShow)
+  const modalHandler = (prop: string) => (event: any) => {
+    setUpdateShow(!updateShow);
+    setUpdateId(prop);
   }
 
   return (
@@ -31,9 +36,8 @@ const AppointmentTable = ({ apptList, setUpdateShow, updateShow }: any) => {
               <td>{appt.office}</td>
               <td>{appt.date}</td>
               <td className="d-flex justify-content-center">
-                <Button className="mx-1" onClick={deleteHandler(appt.id)}>Delete</Button>
-
-                <Button className="mx-1" onClick={modalHandler}>Update</Button>
+                <Button className="mx-1" onClick={modalHandler(appt.id)}>Update</Button>
+                <Button variant="danger" className="mx-1" onClick={deleteHandler(appt.id)}>Delete</Button>
               </td>
             </tr>
           ))}

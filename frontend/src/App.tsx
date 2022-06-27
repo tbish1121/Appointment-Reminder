@@ -10,8 +10,10 @@ import React from 'react';
 function App() {
   //Use state boolean for toggling form modal
   const [show, setShow] = useState(false);
+  //Use state boolean for toggling update modal
   const [updateShow, setUpdateShow] = useState(false);
-
+  //Use state array for storing ID of appointment for opening update modal
+  const [updateId, setUpdateId] = useState("");
   const handleClose = () => setShow(false);
   const handleUpdateClose = () => setUpdateShow(false);
   const [apptList, setApptList] = useState([] as any);
@@ -28,8 +30,8 @@ function App() {
     <div className="App">
       <Header show={show} setShow={setShow} />
       <AppointmentModal show={show} handleClose={handleClose} />
-      <UpdateModal updateShow={updateShow} handleUpdateClose={handleUpdateClose} />
-      <AppointmentTable setUpdateShow={setUpdateShow} updateShow={updateShow} apptList={apptList} />
+      <UpdateModal updateId={updateId} apptList={apptList} updateShow={updateShow} handleUpdateClose={handleUpdateClose} />
+      <AppointmentTable setUpdateId={setUpdateId} setUpdateShow={setUpdateShow} updateShow={updateShow} apptList={apptList} />
     </div>
   );
 }
