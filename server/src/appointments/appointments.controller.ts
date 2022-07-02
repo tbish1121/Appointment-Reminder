@@ -1,5 +1,6 @@
 import { Request, Response } from 'express';
 const prisma = require('../config/db.config')
+const twilio = require('../utils/twilio');
 
 //Interface for appointment data
 interface Appt {
@@ -20,6 +21,8 @@ exports.create = async (req: Request, res: Response) => {
 
 
     const appt: Appt = req.body;
+    const { name, office, date } = appt;
+    twilio.sendMessage({ name, office, date })
 
     const appointment = await prisma.appointment.create({
         data: {
@@ -30,6 +33,7 @@ exports.create = async (req: Request, res: Response) => {
     })
 
     res.json(appointment);
+
 }
 
 
