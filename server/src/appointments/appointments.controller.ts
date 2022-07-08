@@ -16,13 +16,25 @@ exports.getAll = async (req: Request, res: Response) => {
     res.send(appointments);
 }
 
+//Get appt by ID
+exports.getById = async(req: Request, res: Response) => {
+    const id = req.params.id;
+
+    const appointment = await prisma.appointment.findUnique({
+        where: {id: id}
+    })
+
+    res.send(appointment);
+    return appointment;
+}
+
 //Create an appointment
 exports.create = async (req: Request, res: Response) => {
 
 
     const appt: Appt = req.body;
     const { name, office, date } = appt;
-    twilio.sendMessage({ name, office, date })
+    twilio.newApptMessage({ name, office, date })
 
     const appointment = await prisma.appointment.create({
         data: {
@@ -40,9 +52,14 @@ exports.create = async (req: Request, res: Response) => {
 exports.delete = async (req: Request, res: Response) => {
     const id: number = parseInt(req.params.id);
 
+    
     const appointment = await prisma.appointment.delete({
         where: { id: id }
     });
+
+    const {name, office, date} = appointment
+    twilio.deleteApptMessage({name, office, date});
+
     res.json(appointment);
 }
 
