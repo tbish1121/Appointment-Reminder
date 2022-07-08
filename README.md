@@ -9,7 +9,7 @@
         <li>PostgreSQL</li>
       </ol>      
      
-### Project Goals ###
+## Project Goals ##
    What I Learned:
          <ol>
            <li>A working knowledge of using Typescript.</li>
