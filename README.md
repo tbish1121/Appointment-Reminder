@@ -1,13 +1,13 @@
-## Appointment-Reminder ##
+# Appointment-Reminder #
 
-# About The Project
+## About The Project ##
    Built With:
       -Typescript
       -React
       -Node/Express
       -PostgreSQL
 
-# Project Goals
+### Project Goals ###
    What I Learned:
          <ol>
            <li>A working knowledge of using Typescript.</li>
