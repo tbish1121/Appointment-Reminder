@@ -1,4 +1,7 @@
 ## Appointment-Reminder ##
+![This is an image](/images/AppointmentReminderPic.png)
+<br/>
+
 
 # About The Project
    Built With:
