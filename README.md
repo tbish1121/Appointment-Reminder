@@ -1,11 +1,9 @@
-<<<<<<< HEAD
 ## Appointment-Reminder ##
-![This is an image](/images/AppointmentReminderPic.png)
+![This is an image](https://github.com/tbish1121/Appointment-Reminder/tree/main/images/AppointmentReminderPic.PNG)
 <br/>
 
 =======
 # Appointment-Reminder #
->>>>>>> af8ab2fa563d647a10e4bcec1f3122f2ebe0a817
 
 ## About The Project ##
    Built With:
