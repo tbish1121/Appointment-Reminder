@@ -1,5 +1,5 @@
 ## Appointment-Reminder ##
-![preview image](/images/previewpic.png)
+![preview image](/images/previewpic.PNG)
 <br/>
 
 =======
