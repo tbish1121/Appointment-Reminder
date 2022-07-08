@@ -1,5 +1,5 @@
 ## Appointment-Reminder ##
-![This is an image](https://github.com/tbish1121/Appointment-Reminder/tree/main/images/AppointmentReminderPic.PNG)
+![preview image](/images/AppointmentReminderPic.png)
 <br/>
 
 =======
