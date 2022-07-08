@@ -2,11 +2,13 @@
 
 ## About The Project ##
    Built With:
-      -Typescript
-      -React
-      -Node/Express
-      -PostgreSQL
-
+      <ol>
+        <li>Typescript</li>
+        <li>React</li>
+        <li>Node/Express</li>
+        <li>PostgreSQL</li>
+      </ol>      
+     
 ### Project Goals ###
    What I Learned:
          <ol>
