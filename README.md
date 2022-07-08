@@ -1,8 +1,8 @@
-## Appointment-Reminder ##
+# Appointment-Reminder #
 ![preview image](/images/previewpic.PNG)
 <br/>
 
-# Appointment-Reminder #
+
 
 ## About The Project ##
    Built With:
